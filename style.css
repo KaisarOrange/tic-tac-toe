@@ -8,8 +8,8 @@
     grid-template: 1fr 1fr 1fr / 1fr 1fr 1fr;
     text-align: center;
     margin: auto;
-    width: 30vw;
-    height: 30vw;
+    width: 500px;
+    height: 500px;
 }
 .space{
     border: solid 1px;
@@ -34,4 +34,24 @@
 }
 .start:active{
     background-color: rgb(163, 163, 163);
+}
+@media only screen and (max-width: 750px) {
+    .arena{
+        width: 200px;
+        height: 200px;
+    }
+    .space{
+        font-size: 3rem;
+    }
+    .title{
+        font-size: 1rem;
+        margin-top: 70px;
+    }
+    .start{
+        font-size: 1rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 20px;
+    }
 }
