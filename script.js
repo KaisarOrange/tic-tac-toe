@@ -12,10 +12,10 @@ let playerOneMove = [];
 let playerTwoMove = []; 
 
 
-cell.forEach(btn => btn.addEventListener('click', (e)=>{
+cell.forEach((btn,index) => btn.addEventListener('click', (e)=>{
     if(gameState === "start" && move >= 0 && e.target.textContent ===''){
         
-    let index = parseInt(e.target.id) ;
+   // let index = parseInt(e.target.id) ;
     if(turn === "o"){
         playerOneMove.push(index);
         winner(playerOneMove);
@@ -30,13 +30,12 @@ cell.forEach(btn => btn.addEventListener('click', (e)=>{
     
     move = move -1;
     }
-    
     console.log(move);      
 }));
 
 const winner = (playerMove) => {
-    const winCondition = [[1,2,3], [4,5,6],[7,8,9],[1,5,9],[3,5,7],
-    [1,4,7],[2,5,8],[3,6,9]];
+    const winCondition = [[0,1,2], [3,4,5],[6,7,8],[0,4,8],[2,4,6],
+    [0,3,6],[2,5,8],[3,6,9]];
 
     winCondition.forEach((item)=>{
      if( playerMove.includes(item[0])  &&  playerMove.includes(item[1]) &&  playerMove.includes(item[2])){
